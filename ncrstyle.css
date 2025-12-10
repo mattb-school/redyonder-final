@@ -1,0 +1,404 @@
+body {
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    sans-serif;
+  background: #f5f7fa;
+  color: #111827;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Header area */
+header {
+  background: #acb0b6;
+  padding: 0;
+  border-bottom: 1px solid #b7babf;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px; /* CLEAN, not 180px */
+  padding: 0 20px;
+}
+
+/* Logo sizing — visible and balanced */
+.navbar img {
+  height: 110px;       /* big but not huge */
+  width: auto;
+  margin: 0;           /* remove crazy offsets */
+}
+
+/*.menu {
+  height: auto;
+  list-style: none;
+  display: flex;
+  gap: 14px;
+  margin-right: 50px;
+}*/
+
+/*.menu li {
+  display: block;
+  font-size: 22px;
+  color: #0b1a3a;
+  text-decoration: none;
+  font-weight: 900;
+  padding: 20px;
+  cursor: pointer;
+}*/
+
+/* Menu */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+}
+
+.menu li {
+  font-size: 22px;
+  font-weight: 900;
+  color: #0b1a3a;
+  cursor: pointer;
+}
+
+
+.menu li a {
+  padding: 0;
+}
+
+.menu li:hover {
+  color: #49749f;
+}
+
+/* Form & display section */
+
+#wrapper {
+  display: grid;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+
+  margin: 15px auto;
+  width: 90%;
+}
+
+section {
+  border-top: 1px dashed #e5e7eb;
+}
+
+#ncrhead {
+  border-top: none;
+}
+
+.two-columns {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+
+.three-columns {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+
+.four-columns {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+
+.help-button {
+  background-color: #a8c4ff;
+  font-weight: 600;
+  font-size: 12px;
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: 8px;
+  box-shadow: 1px 2px 6px rgba(17, 24, 39, 0.18);
+
+  padding: 4px 8px;
+  margin: 5px 4px;
+}
+
+.help-button:hover {
+  background-color: #95b7ff;
+  box-shadow: 2px 4px 10px rgba(17, 24, 39, 0.22);
+  transform: translateY(-2px);
+}
+
+/* Display & form items */
+
+.span-two {
+  grid-column: span 1;
+}
+
+.span-three {
+  grid-column: span 1;
+}
+
+.span-four {
+  grid-column: span 1;
+}
+
+.asterisk {
+  color: red;
+}
+
+.displayField {
+  font-weight: bolder;
+}
+
+/* inputs */
+
+form {
+  gap: 50px;
+}
+
+button {
+  cursor: pointer;
+  border: 1.5px solid #0b1a3a;
+  background: #ffffff;
+  color: #0b1a3a;
+  border-radius: 999px;
+  font-weight: 700;
+  padding: 8px 16px;
+  margin: 10px 8px;
+  transition: transform 0.12s ease, box-shadow 0.18s ease, background 0.2s ease;
+  box-shadow: 0 6px 14px rgba(11, 26, 58, 0.08);
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 22px rgba(11, 26, 58, 0.12);
+  background: #f3f6fb;
+}
+
+button:disabled {
+  background: lightgrey;
+}
+
+input[type="number"],
+input[type="text"],
+input[type="date"] {
+  display: block;
+  width: 100%;
+  min-height: 1.75rem;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  accent-color: #0b1a3a;
+}
+
+input[type="radio"]:hover,
+input[type="checkbox"]:hover {
+  transform: scale(1.2);
+}
+
+textarea {
+  width: 100%;
+  min-height: 130px;
+  resize: vertical;
+}
+
+.inline-wrapper {
+  display: flex;
+  gap: 100px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+/*Add by David for the Floating screen*/
+#qaCompleteModal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+#qaCompleteModal .modal-content {
+  background-color: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  width: 480px;
+  max-width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+#qaCompleteModal .modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+#closeQaComplete {
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+/* Overlay background altered by Malik */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999; /* make sure it appears above everything */
+  inset: 0; /* shorthand for top:0; right:0; bottom:0; left:0; */
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Popup box altered by Malik*/
+.modal-content {
+  background: #fff;
+  width: 600px;       /* Increase width */
+  max-width: 90%;     /* Keep responsive on small screens */
+  padding: 30px 40px; /* Add more padding around text */
+  border-radius: 12px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.25);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;   /* Center title */
+  line-height: 1.6;  /* Spread out lines */
+  font-size: 1.0em;    /* Slightly bigger text */
+  margin-bottom: 20px; /*Space below the title */
+}
+
+/* Close button altered by Malik*/
+.close {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Smooth popup animation altered by Malik*/
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* for desktop */
+@media screen and (min-width: 1440px) {
+  #wrapper {
+    width: 65%;
+  }
+
+  .two-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .three-columns {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .four-columns {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .span-two {
+    grid-column: span 2;
+  }
+
+  .span-three {
+    grid-column: span 3;
+  }
+
+  .span-four {
+    grid-column: span 4;
+  }
+}
+
+/* get rid of arrows on number boxes */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Wrap navbar + user bar so all widths match */
+.nav-wrapper {
+  max-width: 1200px;      /* same as your table + layout width */
+  margin: 0 auto;         /* centers everything */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 6px 20px;
+  overflow: hidden;
+}
+
+/* USER INFO ABOVE NAV */
+/* Username row */
+#topUserBar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: -10px;   /* pulls it closer to menu */
+}
+
+
+/* Username text */
+#usernameDisplay {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0b1a3a;
+}
+
+/* Logout button */
+#logoutBtn {
+  background-color: #e63946;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#logoutBtn:hover {
+  background-color: #c62828;
+}
+
+/* Flex container for logo + right column */
+.navbar {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Prevent horizontal scroll on all screens */
+html, body {
+  overflow-x: hidden;
+}
+/* Right side (username + menu) */
+.rightNav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;            /* good spacing */
+}
+
+
+
+
